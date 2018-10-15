@@ -1,0 +1,23 @@
+import Materias.*
+import Estudiantes.*
+import Carreras.*
+import TiposDeInscripcion.*
+
+describe "test de estudiante" {
+
+	var juan = new Estudiante(carreras=tpi)
+	var tpi = new Carrera()
+	var matematica = new Materia(anio=2018,carrera=tpi,tipoDeInscripcionSegun=correlativa)
+	var laboratorio = new Materia(anio=2018,carrera=tpi,tipoDeInscripcionSegun=sinRequerimiento)
+	var correlativa= new Correlativa()
+	
+
+test" Juan aprobo matematica con 9 y laboratorio con 8"{
+	juan.aprobarMateria(matematica,9)
+	juan.aprobarMateria(laboratorio,8)
+	assert.equals([matematica,laboratorio].contains(juan.aprobadas()))
+	
+}
+}
+
+

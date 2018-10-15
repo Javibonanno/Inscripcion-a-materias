@@ -1,4 +1,3 @@
-
 class Carrera {
 
 	var materias = []
@@ -6,6 +5,6 @@ class Carrera {
 	method laMateriaEstaEnLacarrera(unaMateria) {
 		return materias.contains(unaMateria)
 	}
-
+	
 }
 

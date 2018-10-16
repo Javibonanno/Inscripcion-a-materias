@@ -15,8 +15,10 @@ class Estudiante {
 	}
 
 	method aprobarMateria(unaMateria, unaNota) {
-		if (!self.tieneAprobada(unaMateria)) {
-			self.agregarMateriaAprobada(unaMateria, unaNota)
+		if (unaNota >= 7) {
+			if (!self.tieneAprobada(unaMateria)) {
+				self.agregarMateriaAprobada(unaMateria, unaNota)
+			}
 		}
 	}
 
@@ -29,9 +31,7 @@ class Estudiante {
 	}
 
 	method puedeCursar(unaMateria) {
-		return not self.tieneAprobada(unaMateria) 
-		and carreras.laMateriaEstaEnLacarrera(unaMateria)
-		and unaMateria.puedeCursar()
+		return not self.tieneAprobada(unaMateria) and carreras.laMateriaEstaEnLacarrera(unaMateria) and unaMateria.puedeCursar(self)
 	}
 
 }

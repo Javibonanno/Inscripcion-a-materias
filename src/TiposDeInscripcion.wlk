@@ -2,7 +2,7 @@ class Correlativa {
 
 	const property correlativas = []
 
-	method cumple(unEstudiante) {
+	method cumpleCondicion(unEstudiante) {
 		return correlativas.all{ unaMateria => unEstudiante.tieneAprobada(unaMateria) }
 	}
 
